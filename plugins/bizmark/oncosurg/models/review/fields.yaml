@@ -1,0 +1,59 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    active:
+        label: Статус публикации
+        span: full
+        type: checkbox
+        default: false
+    custom_date:
+        label: Дата публикации (текущая, если не заполнено)
+        span: auto
+        type: datepicker
+        mode: date
+    author:
+        label: Автор
+        span: auto
+    desease:
+        label: Заболевание
+        span: auto
+        type: relation
+        emptyOption: 'Без привязки к заболеванию'
+    email:
+        label: E-mail
+        span: auto
+    rating:
+        label: Рейтинг
+        span: auto
+        type: dropdown
+        emptyOption: 'Без рейтинга'
+        options:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+            5: 5
+    comment:
+        label: Отзыв
+        span: full
+        type: textarea
+    avatar:
+        label: Фото
+        span: auto
+        type: fileupload
+    answer:
+        label: Ответ
+        span: full
+        type: nestedform
+        usePanelStyles: false
+        form:
+            fields:
+                author:
+                    label: Имя отвечающего
+                    span: auto
+                text:
+                    label: Ответ
+                    span: auto
+                    type: textarea

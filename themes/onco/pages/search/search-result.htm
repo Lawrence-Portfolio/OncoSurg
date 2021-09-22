@@ -1,0 +1,53 @@
+title = "Результат поиска"
+url = "/search"
+layout = "default"
+is_hidden = 0
+
+[Search]
+==
+{% put styles %}
+    <link rel="stylesheet" href="{{ [
+        'assets/css/partials/breadcrumbs.css',
+        'assets/css/partials/form.css',
+        'assets/css/partials/review.css',
+        'assets/css/partials/pagination.css',
+
+        'assets/css/pages/search-result.css'
+    ]|theme }}">
+{% endput %}
+{% set breadcrumbs = [
+    {'title': this.page.title, 'isActive' : true }
+] %}
+{% partial 'layout/breadcrumbs/breadcrumbs' breadcrumbs=breadcrumbs %}
+<section id="search-result">
+    <div class="container">
+        <h1 class="h-section">Результаты поиска по запросу {{ input('q') }}</h1>
+        <p>Поиск выдал {{ Search.deseases.count()|plural(['результат', 'результата', 'резултатов']) }}</p>
+        <div class="row">
+        {% for item in Search.deseases %}
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                        {% if item.parent %}
+                            <a href="{{ 'cards/desease-child-page'|page({slug:item.slug, parent:item.parent.slug}) }}">
+                                {{ item.name }}
+                            </a>
+                        {% else %}
+                            <a href="{{ 'cards/desease-page'|page({slug:item.slug}) }}">
+                                {{ item.name }}
+                            </a>
+                        {% endif %}
+                        </h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ item.category.name }}</h6>
+                        {% set description = item.information|striptags %}
+                        <p class="card-text">{{ description|length > 150 ? description|slice(0, 150) ~ '...' : description }}</p>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <span class="search-fail">Ничего не найдено</span>
+        {% endfor %}
+        </div>
+    </div>
+</section>

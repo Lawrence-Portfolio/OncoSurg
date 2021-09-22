@@ -1,0 +1,19 @@
+title = "Страница не найдена"
+url = "/404"
+layout = "default"
+is_hidden = 0
+==
+{% put styles %}
+   <link rel="stylesheet" href="{{'assets/css/pages/404.css'|theme}}">
+{% endput %}
+
+{% put main_classes %}
+   class="not-found-page"
+{% endput %}
+<div>
+   <span class="num-error bold">404</span>
+   <span class="error">Ошибка</span>
+   <span class="not-found bold">Страница не найдена</span>
+</div>
+
+

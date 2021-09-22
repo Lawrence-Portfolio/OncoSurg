@@ -1,0 +1,67 @@
+title = "Новости карточка"
+url = "/news/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "listings/news-listing"
+==
+function onEnd() {
+    if (empty($this->blogPost->post->categories()->where('slug', 'novosti')->first())) {
+        return $this->controller->run(404);
+    }
+}
+==
+{% put styles %}
+    <link rel="stylesheet" href="{{ [
+        'assets/css/partials/breadcrumbs.css',
+        'assets/css/pages/card.css'
+        ]|theme }}">
+{% endput %}
+{% put main_classes %}
+   id="card-page"
+   class="card-news-page"
+{% endput %}
+{% set breadcrumbs = [
+   {'title': 'Новости', 'url' : 'listings/news-listing'|page },
+   {'title': post.title, 'isActive' : true }
+] %}
+<div class="container">
+    {% if post.featured_images.count %}
+        <div class="featured-images text-center">
+            {% for image in post.featured_images %}
+                <p>
+                    <img
+                            data-src="{{ image.filename }}"
+                            src="{{ image.path }}"
+                            alt="{{ image.description }}"
+                            style="max-width: 100%"
+                            class="img-fluid hero-card-img" />
+                </p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% partial 'layout/breadcrumbs/breadcrumbs' breadcrumbs=breadcrumbs %}
+
+{% set post = blogPost.post %}
+<section id="card">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8">
+            <h1 class="title">
+                {{ post.title }}
+            </h1>
+         </div>
+      </div>
+      <hr>
+       <div class="fr-view">
+           {{ post.content_html|raw }}
+       </div>
+      <div class="date-block">
+         <span class="publish">Опубликованно</span>
+         <span class="date">{{ post.published_at | date('d.m.Y') }}</span>
+      </div>
+   </div>
+</section>

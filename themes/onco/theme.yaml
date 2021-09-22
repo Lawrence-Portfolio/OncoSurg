@@ -1,0 +1,158 @@
+name: OncoSurg
+description: 'Шаблон для сайта'
+author: Biz-Mark
+homepage: 'https://biz-mark.ru'
+code: ''
+form:
+    tabs:
+        fields:
+            full_address:
+                label: Полный адрес
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-4 col-xs-12'
+            gps:
+                label: GPS
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-4 col-xs-12'
+            metro:
+                label: Ближайшее метро
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-4 col-xs-12'
+            address:
+                label: Короткий адрес
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-3 col-xs-12'
+            phone:
+                label: Телефон
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-3 col-xs-12'
+            fax:
+                label: Факс
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-3 col-xs-12'
+            email:
+                label: E-mail
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-3 col-xs-12'
+            facebook:
+                label: Facebook
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-3 col-xs-12'
+            twitter:
+                label: Twitter
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-3 col-xs-12'
+            vk:
+                label: VK
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-3 col-xs-12'
+            instagram:
+                label: Instagram
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-3 col-xs-12'
+            how_to_get:
+                label: Как пройти
+                tab: 'Контакты'
+                span: storm
+                cssClass: 'col-md-12'
+                type: richeditor
+            additional_phones:
+                label: Дополнительные номера телефонов
+                tab: 'Контакты'
+                type: repeater
+                form:
+                    fields:
+                        phone:
+                            label: Телефон
+                            span: auto
+            hero_slider:
+                tab: 'Главный слайдер'
+                type: repeater
+                form:
+                    fields:
+                        image:
+                            label: Изображение
+                            span: auto
+                            type: mediafinder
+            director_title:
+                tab: 'Руководитель отдела'
+                label: Заголовок
+                span: full
+                type: richeditor
+            director_subcaption:
+                tab: 'Руководитель отдела'
+                label: Краткий подзаголовок
+                span: full
+            director_name:
+                tab: 'Руководитель отдела'
+                label: ФИО руководителя
+                span: full
+            director_descr:
+                tab: 'Руководитель отдела'
+                label: Описание
+                span: full
+                type: richeditor
+            director_img:
+                tab: 'Руководитель отдела'
+                label: Изображение
+                span: full
+                type: mediafinder
+            video:
+                label: Ссылка на видео
+                tab: 'Видео'
+                span: left
+            prof_materials:
+                tab: 'Профессиональные материалы'
+                type: repeater
+                form:
+                    fields:
+                        video:
+                            label: Ссылка на видео
+                            span: auto
+            gallery:
+                tab: 'Фотогалерея'
+                type: repeater
+                form:
+                    fields:
+                        image:
+                            label: Изображение
+                            span: auto
+                            type: mediafinder
+            about_clinic:
+                tab: 'О клинике'
+                label: 'Об отделе'
+                type: richeditor
+                span: full
+            staff:
+                tab: 'О клинике'
+                type: repeater
+                label: Сотрудники
+                form:
+                    fields:
+                        image:
+                            label: Изображение
+                            span: auto
+                            type: mediafinder
+                        name:
+                            label: ФИО
+                            span: auto
+                        description:
+                            label: Описание
+                            span: full
+                            type: richeditor
+            history:
+                tab: 'О клинике'
+                label: 'История'
+                type: richeditor
+                span: full

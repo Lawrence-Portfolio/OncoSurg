@@ -1,0 +1,39 @@
+@import '../../../build/stylus/utils/color'
+
+.pagination
+   justify-content: center
+   margin: 35px 0
+   .page-item
+      display flex
+      justify-content: center
+      align-items: center
+      width 55px
+      height 55px
+      margin: 0 2px
+      background-color: $main-color
+   .page-link
+      padding: 0
+      display flex
+      justify-content: center
+      align-items: center
+      width 55px
+      height 55px
+      margin: 0 2px
+      background-color: $main-color
+      font-size: 24px
+      font-family: 'PT-Sans'
+      color: #fff
+      border none
+      &:hover
+         background-color: $main-color-hover
+         transition: .2s
+   .active:before
+      content: ''
+      position: absolute
+      bottom: 14px
+      width 15px
+      height 1px
+      background-color: #fff
+@media(max-width 767px)
+   .pagination
+      margin: 15px 0

@@ -1,0 +1,27 @@
+{% set isPodMenu = true %}
+<div class="col-xl-3 col-lg-4 col-md-6 offer-card">
+   <div class="offer-wrap">
+       <div class="headline-card">
+           <img src="{{'assets/img/svg/offer-icon-1.svg'|theme}}" alt="Пищевод">
+           <span class="headline">Пищевод</span>
+       </div>
+       <div class="content-card">
+           <ul class="list">
+              {% for i in 1..4 %}
+               <li class="list-item">
+                   <a href="{{ 'cards/diseases-card'|page }}" class="list-link">Ахалазия</a>
+                  {% if isPodMenu %}
+                  <ul class="pod-list">
+                     {% for i in 1..2 %}
+                     <li class="pod-list-item">
+                        <a href="{{ 'cards/diseases-card'|page }}" class="pod-list-link">Подпункт</a>
+                     </li>
+                     {% endfor %}
+                  </ul>
+                  {% endif %}
+               </li>
+               {% endfor %}
+           </ul>
+       </div>
+   </div>
+</div>

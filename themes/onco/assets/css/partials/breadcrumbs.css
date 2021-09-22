@@ -1,0 +1,27 @@
+#breadcrumbs .list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 15px 0;
+  list-style-type: none;
+}
+#breadcrumbs .list .list-item {
+  position: relative;
+  padding-right: 15px;
+}
+#breadcrumbs .list .list-item:before {
+  content: '/';
+  position: absolute;
+  right: 5px;
+}
+#breadcrumbs .list .list-item:last-child:before {
+  display: none;
+}
+#breadcrumbs .list .list-item .list-link {
+  color: #000;
+}
+#breadcrumbs .list .list-item .current-page {
+  font-weight: 700;
+}

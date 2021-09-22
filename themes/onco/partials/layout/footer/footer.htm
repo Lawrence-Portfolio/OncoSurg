@@ -1,0 +1,78 @@
+<footer>
+    <div class="footer-wrap">
+        <div class="container">
+            <div class="row">
+                {% for columns in staticMenu.menuItems|batch(5) %}
+                    <div class="col-lg-3 footer-section">
+                        <div class="info">
+                            {% if loop.index == 1 %}
+                                <span class="footer-title">Информация</span>
+                            {% endif %}
+                            <div class="footer-content {{ loop.index > 1 ? 'no-title' : '' }}">
+                                {% for item in columns %}
+                                    <a class="link" href="{{ item.url }}">{{ item.title }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="col-lg-3 footer-section">
+                    <div class="founders-and-partners">
+                    <span class="footer-title">Учредители и партнеры</span>
+                    <div class="footer-content">
+                        <img class="img-fluid partner-img" src="{{'assets/img/partner-1.jpg'|theme}}" alt="Министерство науки и высшего образования РФ">
+                        <img class="img-fluid partner-img" src="{{'assets/img/partner-2.jpg'|theme}}" alt="российская академия наук">
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 footer-section">
+                    <div class="site-search">
+                    <span class="footer-title">Поиск по сайту</span>
+                    <div class="footer-content">
+                        <form class="form-inline" action="{{ 'search/search-result'|page }}" method="GET">
+                            <input type="search" class="form-control" name="q" placeholder="Что вы ищите?">
+                            <button type="submit" class="btn btn-search"><i class="far fa-search"></i></button>
+                        </form>
+                    </div>
+                    </div>
+                    <div class="sotial-networks-container">
+                    <span class="footer-title">Мы в социальных сетях</span>
+                    <div class="sotial-networks">
+                        {% if this.theme.facebook %}
+                        <a href="{{ this.theme.facebook }}" class="sotial-link">
+                            <img class="img-fluid" src="{{'assets/img/svg/facebook.svg'|theme}}" alt="facebook">
+                        </a>
+                        {% endif %}
+                        {% if this.theme.twitter %}
+                        <a href="{{ this.theme.twitter }}" class="sotial-link">
+                            <img class="img-fluid" src="{{'assets/img/svg/twitter.svg'|theme}}" alt="twitter">
+                        </a>
+                        {% endif %}
+                        {% if this.theme.vk %}
+                        <a href="{{ this.theme.vk }}" class="sotial-link">
+                            <img class="img-fluid" src="{{'assets/img/svg/vk.svg'|theme}}" alt="vkontakte">
+                        </a>
+                        {% endif %}
+                        {% if this.theme.instagram %}
+                        <a href="{{ this.theme.instagram }}" class="sotial-link">
+                            <img class="img-fluid" src="{{'assets/img/svg/insta.svg'|theme}}" alt="instagram">
+                        </a>
+                        {% endif %}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copywriter">
+        <div class="container">
+            <div class="wrap">
+                <span class="copy-text">© 2020 РНЦХ. Отдел абдоминальной хирургии и онкологии</span>
+                <div class="biz-mark-wrap">
+                    <img src="{{'assets/img/logo-w-site.png'|theme}}" alt="BizMzrk">
+                    <a href="https://biz-mark.ru" target="_blank" class="biz-mark">Разработка и продвижение сайтов</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

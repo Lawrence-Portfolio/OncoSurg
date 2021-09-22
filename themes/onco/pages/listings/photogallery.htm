@@ -1,0 +1,72 @@
+title = "Фотогалерея"
+url = "/gallery"
+layout = "default"
+is_hidden = 0
+
+[Gallery]
+==
+{% put styles %}
+<link rel="stylesheet" href="{{ [
+   'assets/css/libs/magnific-popup.css',
+   'assets/css/partials/breadcrumbs.css',
+   'assets/css/partials/photo-card.css',
+   'assets/css/pages/listing.css'
+   ]|theme }}">
+{% endput %}
+{% put main_classes %}
+      id="listing-page"
+      class="photo-gallery-page"
+{% endput %}
+{% set breadcrumbs = [
+   {'title': 'Фотогалерея', 'isActive' : true }
+] %}
+{% partial 'layout/breadcrumbs/breadcrumbs' breadcrumbs=breadcrumbs %}
+<section id="listing">
+   <div class="container">
+      <h1 class="h-section">Профессиональные материалы</h1>
+      <div class="row photo-gallery">
+            {% partial 'gallery/gallery' %}
+      </div>
+      <div class="row justify-content-center">
+         <div id="paginationWrap" class="col-lg-5">
+            {% partial 'gallery/button' %}
+         </div>
+      </div>
+   </div>
+</section>
+{% put scripts %}
+    <script src="{{ [
+        'assets/js/libs/jquery.magnific-popup.min.js',
+        'assets/js/jquery.query-object.js',
+        'assets/js/gallery.js'
+    ]|theme }}"></script>
+    <script>
+        $(function () {
+            initPagination();
+        });
+        function initPagination() {
+            $('.btn-load').on('click', function (target) {
+                target.preventDefault();
+                $.oc.stripeLoadIndicator.show();
+
+                let button = $(target.currentTarget),
+                    page = button.data('page'),
+                    newQuery = $.query.set('page', page).toString();
+
+                window.history.pushState(null, null, `${location.origin}${location.pathname}${newQuery}`);
+
+                $.request('Gallery::onGet', {
+                    update: {
+                        'gallery/gallery' : '@.photo-gallery',
+                        'gallery/button' : '#paginationWrap',
+                    },
+                    success: function(response) {
+                        this.success(response);
+                        initPagination();
+                        $.oc.stripeLoadIndicator.hide();
+                    }
+                })
+            });
+        }
+    </script>
+{% endput %}

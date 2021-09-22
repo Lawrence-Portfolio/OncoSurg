@@ -1,0 +1,178 @@
+title = "Отзывы"
+url = "/reviews"
+layout = "default"
+is_hidden = 0
+
+[ReviewsList]
+
+[Pagination]
+available_count_per_page = "6"
+count_per_page = 6
+pagination_limit = 3
+active_class = "_act"
+button_list = "prev,main,next"
+first_button_name = "First"
+first_button_limit = 3
+first-more_button_name = "..."
+first-more_button_limit = 1
+prev_button_name = "prev"
+prev_button_limit = 1
+prev-more_button_name = "..."
+prev-more_button_limit = 1
+next-more_button_name = "..."
+next-more_button_limit = 1
+next_button_name = "next"
+next_button_limit = 1
+last-more_button_name = "..."
+last-more_button_limit = 1
+last_button_name = "Last"
+last_button_limit = 3
+==
+function onInit() {
+    $reviewList = $this->ReviewsList->getReviews();
+    $iPage = $this->Pagination->getPageFromRequest();
+    $iLimit = $this->Pagination->getCountPerPage();
+    $iCount = $this->ReviewsList->getReviews()->count();
+
+    // Get review list for page
+    $arReviewList = $reviewList->forPage($iPage, $this->Pagination->getCountPerPage());
+
+    // Get max page number
+    $iMaxPage = $this->Pagination->getMaxPage($iCount);
+
+    $this['iPage'] = $iPage;
+    $this['iLimit'] = $iLimit;
+    $this['iCount'] = $iCount;
+    $this['iMaxPage'] = $iMaxPage;
+    $this['arReviewList'] = $arReviewList;
+}
+==
+{% put styles %}
+   <link rel="stylesheet" href="{{ [
+      'assets/css/partials/breadcrumbs.css',
+      'assets/css/partials/form.css',
+      'assets/css/partials/review.css',
+      'assets/css/partials/pagination.css',
+
+      'assets/css/pages/reviews.css'
+      ]|theme }}">
+{% endput %}
+{% set breadcrumbs = [
+   {'title': this.page.title, 'isActive' : true }
+] %}
+{% partial 'layout/breadcrumbs/breadcrumbs' breadcrumbs=breadcrumbs %}
+<section id="reviews">
+   <div class="container">
+      <h1 class="h-section">Отзывы</h1>
+   </div>
+   <div class="form-reviews blue-section-decor">
+      <div class="container">
+         <form class="form-section" id="formReview">
+            <div class="row">
+               <div class="col-lg-6 form-group">
+                  <label for="name" class="form-label">Ваше имя</label>
+                  <input id="name" type="text" name="username" class="form-control" placeholder="Иванов Иван" required>
+               </div>
+               <div class="col-lg-6 form-group">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input id="email" type="email" name="email" class="form-control" placeholder="email@yandex.ru" required>
+               </div>
+               <div class="col-12 form-group">
+                  <label for="review" class="form-label">Отзыв</label>
+                  <textarea id="review" class="form-control" name="description" rows="5" placeholder="Сообщение"></textarea>
+               </div>
+               <div class="col-lg-6">
+                  <div class="radio-rating-wrap">
+                  <span>Оценка:</span>
+                  <div class="radio-rating">
+                     <input type="radio" id="star-5" name="rating" value="5">
+                     <label for="star-5" title="Оценка «5»"></label>	
+                     <input type="radio" id="star-4" name="rating" value="4">
+                     <label for="star-4" title="Оценка «4»"></label>    
+                     <input type="radio" id="star-3" name="rating" value="3">
+                     <label for="star-3" title="Оценка «3»"></label>  
+                     <input type="radio" id="star-2" name="rating" value="2">
+                     <label for="star-2" title="Оценка «2»"></label>    
+                     <input type="radio" id="star-1" name="rating" value="1">
+                     <label for="star-1" title="Оценка «1»"></label>
+                  </div>
+                  </div>
+               </div>
+               <div class="col-12 form-group custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="checkbox" required>
+                  <label class="custom-control-label" for="checkbox">Отправляя сообщение, вы соглашаетесь с Политикой конфиденциальности</label>
+               </div>
+               <div class="col-lg-6">
+                  <button class="btn btn-submit btn-w-100">Отправить</button>
+               </div>
+                <div class="col-lg-6">
+                    <div id="formReviewNotificationSuccess" class="alert alert-success alert-dismissible hidden" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <p>Ваша форма была успешно отправлена!</p>
+                    </div>
+                </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   <div class="users-comments">
+      <div class="container">
+         <div class="row" id="reviewsWrap">
+            {% partial 'reviews/list' %}
+         </div>
+          <div id="paginationWrap">
+            {% partial 'layout/pagination/pagination' %}
+          </div>
+      </div>
+   </div>
+</section>
+
+{% put scripts %}
+    <script src="{{ 'assets/js/jquery.query-object.js'|theme }}"></script>
+    <script>
+        $('#formReview').submit(function (target) {
+            target.preventDefault();
+            let form = $(this);
+            $.oc.stripeLoadIndicator.show();
+
+            form.request('ReviewsList::onSendReview', {
+                success: function (response) {
+                    this.success(response);
+                    $.oc.stripeLoadIndicator.hide();
+                    $('#formReview')[0].reset();
+                    $('#formReviewNotificationSuccess').removeClass('hidden');
+                }
+            });
+        });
+
+        $(function () {
+            initPagination();
+        });
+        function initPagination() {
+            $('.btn-load').on('click', function (target) {
+                target.preventDefault();
+                $.oc.stripeLoadIndicator.show();
+
+                let button = $(target.currentTarget),
+                    page = button.data('page'),
+                    newQuery = $.query.set('page', page).toString();
+
+                window.history.pushState(null, null, `${location.origin}${location.pathname}${newQuery}`);
+
+                $.request('ReviewsList::onAjax', {
+                    update: {
+                        'reviews/list' : '@#reviewsWrap',
+                        'layout/pagination/pagination' : '#paginationWrap',
+                    },
+                    success: function(response) {
+                        this.success(response);
+                        initPagination();
+                        $.oc.stripeLoadIndicator.hide();
+                    }
+                })
+            });
+        }
+    </script>
+{% endput %}

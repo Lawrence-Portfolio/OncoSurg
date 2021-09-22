@@ -1,0 +1,45 @@
+{% for review in arReviewList %}
+    {% if review.active %}
+        <div class="col-12 col-review">
+            <div class="user-comment">
+                <div class="username-wrap">
+                    <span class="username">{{ review.author }}</span>
+                    {% if review.rating %}
+                        <div class="user-rating">
+                            {% set count = 5 %}
+                            {% set count = count - review.rating %}
+                            {% for i in 1..review.rating %}
+                                <img class="img-fluid star" src="{{'assets/img/svg/star-solid.svg'|theme}}" alt="">
+                            {% endfor %}
+                            {% if count %}
+                                {% for j in 1..count %}
+                                    <img class="img-fluid star" src="{{'assets/img/svg/star-regular.svg'|theme}}" alt="">
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+                <p class="description">
+                    {{ review.comment }}
+                </p>
+                <span class="date-reviews">
+                    {% if review.custom_date %}
+                        {{ review.custom_date | date('d.m.Y', "Europe/Moscow") }}
+                    {% else %}
+                        {{ review.created_at | date('d.m.Y') }}
+                    {% endif %}
+                </span>
+                {% if review.answer %}
+                    <div class="admin-feedback">
+                        <div class="username-wrap">
+                            <span class="username admin">{{ review.answer.author }}</span>
+                        </div>
+                        <p class="description">
+                            {{ review.answer.text }}
+                        </p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}

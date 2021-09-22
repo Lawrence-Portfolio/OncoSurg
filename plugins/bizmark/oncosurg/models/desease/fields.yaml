@@ -1,0 +1,32 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Название
+        span: auto
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+    parent:
+        label: Родительское заболевание
+        span: auto
+        type: relation
+        emptyOption: 'Нет родительского заболевания'
+    category:
+        label: Категория
+        span: auto
+        type: relation
+        emptyOption: 'Без категории'
+    information:
+        label: О заболевании
+        span: full
+        type: richeditor
+    clinic_watch:
+        label: Kлиническое наблюдение
+        span: full
+        type: richeditor

@@ -1,0 +1,28 @@
+@import '../../../build/stylus/utils/color.styl'
+.reviews-card
+    min-height: 450px
+    padding: 40px 30px
+    background-color: #fff
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-align: center
+    margin: 10px
+    box-shadow: 3px 4px 6.5px rgba(0,0,0,0.14)
+    .description
+        margin-top: 30px
+    .name
+        font-size: 18px
+        font-weight: 700
+        color: $main-color
+
+@media(max-width 575px)
+    .reviews-card
+        min-height: auto
+        padding: 20px 15px
+        img
+            width 70px
+        .description
+            margin: 20px 0 40px
+        .name
+            font-size: 16px

@@ -1,0 +1,76 @@
+.offer-card
+   padding: 7.5px
+   .offer-wrap
+      padding: 20px
+      background-color: #fff
+      min-height: 450px
+      box-shadow: 3px 3px 8px 0 rgba(0,0,0,.1)
+      .headline-card
+         position relative
+         height 75px
+         .headline
+            display block
+            padding: 20px 0 0 70px
+            font-weight: 800
+            text-transform: uppercase
+         img 
+            position absolute 
+            width 55px
+            top: 0
+            left: 0
+      .content-card
+         margin-top: 5px
+         .list
+            padding-left: 30px
+            margin: 0
+            list-style-type: none
+            .list-item
+               position relative
+               padding-left: 35px
+               line-height: 1.3
+               &:last-child
+                  margin-bottom: 0
+            .list-link
+               display block
+               padding: 5px 0
+               color: #000
+               text-decoration: none
+               &:hover
+                  font-weight: 700
+                  &:before
+                     border-left-color: #ff0015
+               &:before
+                  content: ''
+                  position absolute
+                  left: 0
+                  top: 9px
+                  border: 5px solid transparent; 
+                  border-left: 8px solid #000;
+         .pod-list
+            list-style-type: none
+            padding-left: 0
+            .pod-list-item
+               padding-left: 10px
+               position relative
+               .pod-list-link
+                  padding: 5px 0
+                  font-size: 14px
+                  color: #000
+                  text-decoration: none
+                  &:hover
+                     font-weight: 700
+                     &:before
+                        background-color: #ff0015
+                  &:before
+                     content: ''
+                     position absolute
+                     left: 0
+                     top: 12px
+                     width 4px
+                     height 1px
+                     background-color: #000
+@media(max-width 767px)
+   .offer-card 
+      .offer-wrap
+         min-height: auto
+         padding-bottom: 40px

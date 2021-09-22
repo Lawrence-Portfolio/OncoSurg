@@ -1,0 +1,18 @@
+<div id="breadcrumbs">
+   <div class="container">
+      <ul class="list">
+         <li class="list-item">
+            <a href="/" class="list-link">Главная</a>
+         </li>
+         {% for item in breadcrumbs %}
+         <li class="list-item">
+            {% if item.isActive %}
+            <span class="current-page">{{ item.title }}</span>
+            {% else %}
+            <a href="{{ item.url }}" class="list-link">{{ item.title }}</a>
+            {% endif %}
+         </li>
+         {% endfor %}
+      </ul>
+   </div>
+</div>

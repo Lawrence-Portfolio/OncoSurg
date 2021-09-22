@@ -1,0 +1,9 @@
+<a href="{{ post.url }}" class="card-link">
+   <div class="card">
+      <img class="tsn-lazy card-img-top" src="{{'assets/img/new-img-1.jpg'|theme}}" data-src="{{'assets/img/new-img-1.jpg'|theme}}" alt="Картинка">
+      <div class="card-body">
+          <p class="card-text">{{ post.title }}</p>
+      </div>
+      <span class="date">{{ post.published_at | date('d.m.Y')}}</span>
+   </div>
+</a>

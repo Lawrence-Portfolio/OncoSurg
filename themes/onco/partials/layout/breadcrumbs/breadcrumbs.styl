@@ -1,0 +1,19 @@
+#breadcrumbs
+   .list
+      display: flex
+      margin: 0
+      padding: 15px 0
+      list-style-type: none
+      .list-item
+         position relative
+         padding-right: 15px
+         &:before
+            content: '/'
+            position absolute
+            right 5px
+         &:last-child:before
+            display: none
+         .list-link
+            color #000
+         .current-page
+            font-weight: 700

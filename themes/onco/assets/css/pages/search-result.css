@@ -1,0 +1,26 @@
+#search-result ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+#search-result ul li {
+  margin-bottom: 20px;
+}
+#search-result ul li:last-child {
+  margin-bottom: 0;
+}
+#search-result ul li a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 22px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+#search-result ul li a:hover {
+  text-decoration: none;
+}
+.search-fail {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 20px;
+}

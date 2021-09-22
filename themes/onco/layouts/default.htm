@@ -1,0 +1,56 @@
+[staticMenu]
+code = "main-menu"
+
+[emptyForm modalForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_subject = "Запись на приём или консультацию"
+mail_recipients[] = "onco-surg@mail.ru"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="robots" content="noindex, nofollow">
+   <link rel="stylesheet" href="{{ [
+      'assets/css/libs/bootstrap.min.css',
+      'assets/fonts/css/all.min.css',
+      'assets/css/partials/header.css',
+      'assets/css/partials/footer.css',
+      'assets/css/partials/scroll-top.css',
+      'assets/css/partials/modal-window.css',
+      'assets/css/partials/richeditor.css',
+      'assets/css/main.css',
+      ]|theme }}">
+   {% styles %}
+   <title>{{ this.page.title }}</title>
+</head>
+<body>
+   {% partial 'layout/header/header' %}
+   <main {% placeholder main_classes %}>
+      {% page %}
+   </main>
+   {% partial 'layout/footer/footer' %}
+   {% partial 'layout/scroll-top/scroll-top' %}
+   {% partial 'layout/modal-window/modal-window' modalForm=modalForm %}
+   <script src="{{ [
+      'assets/js/libs/jquery.min.js',
+      'assets/js/libs/popper.min.js',
+      'assets/js/libs/bootstrap.min.js',
+      'assets/js/libs/jquery.maskedinput.min.js',
+      'assets/js/main.js'
+   ]|theme }}"></script>
+   {% framework extras %}
+   {% scripts %}
+</body>
+</html>

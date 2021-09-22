@@ -1,0 +1,96 @@
+title = "Контакты"
+url = "/contacts"
+layout = "default"
+is_hidden = 0
+
+[emptyForm zapisForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_subject = "Запись на приём или консультацию"
+mail_recipients[] = "onco-surg@mail.ru"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+{% put styles %}
+   <link rel="stylesheet" href="{{ [
+      'assets/css/partials/breadcrumbs.css',
+
+      'assets/css/partials/form.css',
+      'assets/css/pages/contacts.css'
+      ]|theme }}">
+{% endput %}
+
+{% put main_classes %}
+   class="contacts-page"
+{% endput %}
+{% set breadcrumbs = [
+   {'title': this.page.title, 'isActive' : true }
+] %}
+{% partial 'layout/breadcrumbs/breadcrumbs' breadcrumbs=breadcrumbs %}
+<section id="contacts">
+   <div class="container">
+      <h1 class="h-section bold">Контакты</h1>
+      <div class="row">
+         <div class="col-lg-4">
+            <div class="info">
+               <div class="icon phone">
+                   {% for item in this.theme.additional_phones  %}
+                     <a href="tel:{{ item.phone }}" class="phone-num">{{ item.phone }}</a>
+                   {% endfor %}
+               </div>
+            </div>
+            <div class="info">
+               <span class="icon fax">
+                  {{ this.theme.fax }}
+               </span>
+            </div>
+            <div class="info">
+               <a href="mailto:{{ this.theme.email }}" class="icon mail">
+                  {{ this.theme.email }}
+               </a>
+            </div>
+            <span class="subtitle">Адрес центра хирургии</span>
+            <div class="info">
+               <span class="address-info icon address">
+                  {{ this.theme.address }}
+               </span>
+               <span class="address-info">
+                  Координаты: {{ this.theme.gps }}
+               </span>
+               <span class="address-info">
+                  {{ this.theme.metro }}
+               </span>
+            </div>
+            <span class="subtitle">Как пройти</span>
+            <div class="fr-view">
+               {{ this.theme.how_to_get|raw }}
+            </div>
+         </div>
+         <div class="col-lg-8">
+            <div id="map"></div>
+            <form class="form-section" data-request="{{ zapisForm }}::onFormSubmit">
+                {{ form_token() }}
+               <p class="headline-form">Форма для сообщений</p>
+               <div class="row">
+                  {% partial 'layout/form/form' %}
+                  <div class="col-lg-8">
+                      <div id="{{ zapisForm }}_forms_flash"></div>
+                     <button class="btn btn-submit btn-w-100" type="submit">Отправить сообщение</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>
+{% put scripts %}
+<script src="https://api-maps.yandex.ru/2.1/?apikey=33951983-7243-49db-8da0-1a0ceb66b58c&lang=ru_RU" type="text/javascript"></script>
+<script src="{{'assets/js/yandex-map.js'|theme}}"></script>
+{% endput %}

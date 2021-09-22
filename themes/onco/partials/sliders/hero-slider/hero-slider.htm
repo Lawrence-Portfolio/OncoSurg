@@ -1,0 +1,11 @@
+<section id="hero">
+   <div class="hero-slider-wrap">
+      <div id="hero-slider">
+        {% for item in this.theme.hero_slider %}
+            <div class="slider-item">
+                <img class="img-slide tns-lazy" src="{{ item.image|media }}" data-src="{{ item.image|media }}" alt="Операция">
+            </div>
+        {% endfor %}
+      </div>
+   </div>
+</section>

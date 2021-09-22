@@ -1,0 +1,43 @@
+@import '../../../build/stylus/utils/color'
+.prof-materials-slider-wrap
+   padding: 60px 0
+.prof-materials-nav
+   outline: none
+   display flex
+   justify-content: center
+   text-align: center
+   button
+      margin: 2px 0
+      font-size: 24px;
+      font-family: 'PT-Sans'
+      min-width 55px
+      min-height 55px
+      border: none 
+      outline: none
+      background-color: $main-color
+      color: #fff
+      &:hover
+         background-color: $main-color-hover
+   .tns-nav-active
+      position relative
+      &:before
+         content: '';
+         position: absolute;
+         bottom: 14px;
+         width: 15px;
+         height: 1px;
+         background-color: #fff;
+   .controls-btn
+      margin: 2px 4px
+@media(max-width 767px)
+   .prof-materials-slider-wrap
+      padding: 30px 0
+   .prof-materials-nav
+      button
+         font-size: 20px
+         min-width 40px
+         min-height 40px
+      .tns-nav-active:before
+         bottom: 8px
+         width 11px
+      

@@ -1,0 +1,35 @@
+{% set arPaginationList = Pagination.get(iPage, iCount) %}
+{% if iMaxPage > iPage %}
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <button class="btn btn-load btn-w-100" data-page="{{ iPage + 1 }}">Загрузить еще</button>
+        </div>
+    </div>
+{% endif %}
+<nav>
+    <ul class="pagination">
+        {% for arPagination in arPaginationList %}
+            {% if arPagination.code == 'prev' %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_current() ~ '?page=' ~ arPagination.value }}">
+                        <i class="far fa-chevron-left"></i>
+                    </a>
+                </li>
+            {% elseif arPagination.code == 'next' %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_current() ~ '?page=' ~ arPagination.value }}">
+                        <i class="far fa-chevron-right"></i>
+                    </a>
+                </li>
+            {% elseif arPagination.code == 'act'%}
+                <li class="page-item">
+                    <a class="page-link active" href="{{ url_current() ~ '?page=' ~ arPagination.value }}">{{ arPagination.name }}</a>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_current() ~ '?page=' ~ arPagination.value }}">{{ arPagination.name }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>

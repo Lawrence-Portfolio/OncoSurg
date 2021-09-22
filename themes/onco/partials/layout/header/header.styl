@@ -1,0 +1,163 @@
+@import '../../../build/stylus/utils/color'
+header
+   transition: all .2s
+   .header-wrapper
+      position relative
+      z-index 50
+      height 100px
+   .header-floating
+      background-color: #fff
+      padding: 20px 0
+      .logo-section
+         margin auto
+      .header-content
+         display: flex
+         flex-direction: column 
+         justify-content: space-between
+         .h-headline
+            font-size: 20px
+            color: $main-color
+            font-weight: 700
+            margin-bottom: 10px
+         .info
+            color: #000
+            display inline-block
+            padding-left: 30px
+            position relative
+            font-weight: 700
+            margin-left: 30px
+            font-size: 15px;
+            &:before
+               content: ''
+               position absolute
+               left: 0
+               top calc(50% - 12px)
+               width 24px
+               height 24px
+               background-size: cover
+            &:first-child
+               margin-left: 0
+      .btn-modal
+         width 100%
+   .header-fixed
+      position: fixed
+      top 0
+      left: 0
+      right 0
+      box-shadow: 0 -2px 10px 0 rgba(0,0,0,0.5)
+      .header-content
+         flex-direction: row
+         justify-content: flex-start
+         align-items: center
+         .h-headline
+            margin-bottom: 0
+            max-width: 300px
+            font-size 13px
+         .address
+            display: none
+   .navigation
+      background-color: $main-color
+      .navbar-toggler
+         outline: none
+         color: #fff
+         font-size: 25px
+      .nav-item
+         margin-right: 30px
+      .nav-link
+         position relative
+         padding: 9px 0
+         color: #fff
+         font-size: 18px
+         &:before
+            display none
+            content: ''
+            position: absolute
+            bottom: 8px
+            width 100%
+            height 2px
+            background-color: #fff
+         &:hover
+            &:before
+               display: block
+@media(max-width 1199px)
+   header
+      .header-floating
+         .header-content
+            .address
+               display: none
+            .h-headline
+               font-size: 22px
+      .header-fixed 
+         .header-content
+            .info
+               margin: 5px 0
+      .navigation 
+         .nav-item
+            margin-right: 20px
+         .nav-link
+            font-size: 16px
+@media(max-width 991px)
+   header
+      .header-wrapper
+         height 167px
+      .header-floating
+         .header-content
+            flex-direction: row
+            align-items: center
+            .info
+               margin: 5px 10px
+            .h-headline
+               margin-bottom: 0
+               max-width 300px
+      .logo-section
+         order: 1
+      .info-section
+         margin-top: 15px
+         order: 3
+      .btn-section
+         order: 2
+      .row
+         justify-content: center
+      .navigation
+         .navbar-toggler
+            position relative
+            left: -10px
+         .nav
+            padding-bottom: 20px
+            flex-direction: column
+            .nav-item
+               margin-right: 0
+               border-bottom: 1px solid #fff
+@media(max-width 767px)
+   header
+      .header-wrapper
+         height 173px
+      .header-floating
+         .header-content
+            .info
+               margin: 5px 0
+@media(max-width 575px)
+   header
+      .header-wrapper
+         height 315px
+      .header-floating
+         text-align: center
+         .header-content
+            flex-direction: column
+         .info-box
+            margin-top: 15px
+            display flex
+            flex-direction: column
+            justify-content: center
+      .header-fixed 
+         .info-section
+            display: none
+      .logo-section
+         order: 1
+      .info-section
+         order: 2
+      .btn-section
+         margin-top: 15px
+         order: 3
+         
+      

@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Название
+        span: auto
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+    image:
+        label: Изображения категории
+        span: auto
+        type: fileupload
+        fileTypes: png,jpg,svg

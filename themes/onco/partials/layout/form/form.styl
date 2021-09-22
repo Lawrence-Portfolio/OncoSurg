@@ -1,0 +1,39 @@
+@import '../../../build/stylus/utils/color'
+.form-section
+   background-color: #fff
+   padding: 40px
+   box-shadow: 2px 2px 8px rgba(0,0,0,0.14)
+   border-radius: 5px
+.form-group
+   margin-bottom: 30px
+.headline-form
+   font-size: 24px
+   font-weight: 700
+.subtitle-form
+   margin-bottom: 40px
+.form-label
+   margin-bottom: 20px
+.form-control
+   border: 2px solid $border-color
+.custom-control-label
+   padding-left: 25px
+   font-weight: 700
+   &:after
+      left 0
+      top: 1px
+   &:before
+      left 0
+      top: 1px
+      border: 2px solid $border-color
+@media(max-width 575px)
+   .headline-form
+      font-size: 20px
+   .form-section
+      padding: 20px 15px
+      margin: 0 -15px
+   .custom-control-label
+      font-size: 14px
+      &:after
+      &:before
+         top: -1px
+      

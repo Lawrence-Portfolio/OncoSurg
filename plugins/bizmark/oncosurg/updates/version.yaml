@@ -1,0 +1,11 @@
+1.0.1: First version of OncoSurg
+1.0.2:
+    - create_reviews_table.php
+    - create_deseases_table.php
+    - create_categories_table.php
+1.0.3:
+    - Blog extend
+    - update_blog_fields.php
+1.0.4:
+    - Reviews table update
+    - add_reviews_datetime_field.php

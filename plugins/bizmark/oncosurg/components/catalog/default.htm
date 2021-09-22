@@ -1,0 +1,29 @@
+{% for category in __SELF__.categories %}
+    <div class="col-xl-3 col-lg-4 col-md-6 offer-card">
+        <div class="offer-wrap">
+            <div class="headline-card">
+                <img src="{{ category.image.getThumb(55, 55, {mode:'auto'}) }}" alt="">
+                <span class="headline">{{ category.name }}</span>
+            </div>
+            <div class="content-card">
+                <ul class="list">
+                    {% for desease in category.deseases %}
+                        {% if not desease.parent_id %}
+                        <li class="list-item">
+
+                            <a href="{{ 'cards/desease-page'|page({slug:desease.slug}) }}" class="list-link">{{ desease.name }}</a>
+                            <ul class="pod-list">
+                                {% for child_desease in desease.children %}
+                                    <li class="pod-list-item">
+                                        <a href="{{ 'cards/desease-child-page'|page({slug:child_desease.slug, parent:desease.slug}) }}" class="pod-list-link">{{ child_desease.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,46 @@
+title = "О клинике"
+url = "/about-us"
+layout = "default"
+is_hidden = 0
+==
+
+{% put styles %}
+   <link rel="stylesheet" href="{{ [
+      'assets/css/partials/breadcrumbs.css',
+      'assets/css/partials/staff-card.css',
+      'assets/css/pages/about-us.css'
+      ]|theme }}">
+{% endput %}
+{% set breadcrumbs = [
+   {'title': this.page.title, 'isActive' : true }
+] %}
+{% put main_classes %}
+   class="about-us-page"
+{% endput %}
+{% partial 'layout/breadcrumbs/breadcrumbs' breadcrumbs=breadcrumbs %}
+<section id="about-us" class="section-decor-bottom-right">
+   <div class="container">
+      <span class="h-section bold">Об отделе</span>
+      <div class="fr-view">
+          {{ this.theme.about_clinic|raw }}
+      </div>
+   </div>
+</section>
+<section id="staff">
+   <div class="container">
+      <span class="h-section bold">Сотрудники</span>
+      <div class="row">
+          {% for item in this.theme.staff %}
+              {% partial 'cards/staff-card/staff-card' item=item %}
+          {% endfor %}
+      </div>
+   </div>
+</section>
+<section id="history" class="section-decor-top-left">
+   <div class="container">
+      <span class="h-section bold">История</span>
+       <div class="fr-view">
+           {{ this.theme.history|raw }}
+       </div>
+   </div>
+</section>

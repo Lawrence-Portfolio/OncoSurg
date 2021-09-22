@@ -1,0 +1,67 @@
+#reviews {
+  padding-bottom: 40px;
+}
+#reviews .form-reviews {
+  padding: 50px 0;
+  margin: 20px 0 80px;
+}
+#reviews .form-section {
+  position: relative;
+  z-index: 2;
+}
+#reviews .radio-rating-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+}
+#reviews .radio-rating {
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+#reviews .radio-rating > input {
+  display: none;
+}
+#reviews .radio-rating > label {
+  position: relative;
+  width: 25px;
+  height: 22px;
+  margin: 0;
+  cursor: pointer;
+}
+#reviews .radio-rating > label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../img/svg/star-regular.svg");
+  background-size: cover;
+}
+#reviews .radio-rating > input:checked ~ label:before,
+#reviews .radio-rating:not(:checked) > label:hover,
+#reviews .radio-rating:not(:checked) > label:hover ~ label:before {
+  background-image: url("../../img/svg/star-solid.svg");
+  background-size: cover;
+}
+#reviews .users-comments {
+  margin-top: 40px;
+}
+#reviews .btn-load,
+#reviews .pagination {
+  margin: 10px 0;
+}

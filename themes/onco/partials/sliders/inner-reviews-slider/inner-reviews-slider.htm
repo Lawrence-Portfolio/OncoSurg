@@ -1,0 +1,18 @@
+<div class="slider-wrap reviews-slider-wrap">
+    <div id="reviews-slider" class="slider">
+        {% for review in reviews %}
+            {% if review.active %}
+                <div class="slider-item">
+                    {% partial 'cards/inner-reviews-card/inner-reviews-card' review=review %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+<div class="nav-thumbs-wrap">
+    <div id="reviews-thumbs" class="nav-thumbs">
+        {% for review in reviews  %}
+            <button style="display: none;">{{ loop.index }}</button>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,240 @@
+#card-page hr {
+  margin: 30px 0;
+  background-color: #fb2e49;
+}
+.card-diseases-page .h-section {
+  margin-bottom: 40px;
+}
+.card-diseases-page #diseases-description {
+  padding: 30px 0;
+}
+.card-diseases-page #diseases-name {
+  position: relative;
+  background-image: url("../../img/hero-slide.jpg");
+}
+.card-diseases-page #diseases-name:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.6);
+  background-size: cover;
+}
+.card-diseases-page #diseases-name .wrap {
+  height: 300px;
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+.card-diseases-page #diseases-name .buttons .btn {
+  width: 230px;
+  padding: 18px;
+  margin-right: 30px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #0070bd;
+}
+.card-diseases-page #diseases-name .buttons .btn:hover {
+  background-color: #0a5f99;
+}
+.card-diseases-page #diseases-name .buttons .btn:last-child {
+  margin-right: 0;
+}
+.card-diseases-page #watch-and-reviews {
+  padding: 40px 0;
+}
+.card-diseases-page #watch-and-reviews .slider-wrap {
+  margin: 30px 0;
+}
+.card-diseases-page #watch-and-reviews .reviews-card {
+  min-height: auto;
+  padding: 30px;
+  text-align: start;
+  -webkit-box-align: start;
+  -webkit-align-items: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+.card-diseases-page #watch-and-reviews .reviews-card .description {
+  margin: 0 0 40px;
+}
+.card-diseases-page #watch-and-reviews .subtitle {
+  display: block;
+  font-size: 23px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.card-diseases-page #form {
+  padding: 80px 0 50px;
+}
+.card-news-page,
+.card-scinece-page {
+  padding: 15px 0 70px;
+}
+.card-news-page #breadcrumbs,
+.card-scinece-page #breadcrumbs {
+  margin-bottom: 40px;
+}
+.card-news-page .title,
+.card-scinece-page .title {
+  margin: 0;
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+}
+.card-news-page .description,
+.card-scinece-page .description {
+  margin-bottom: 40px;
+}
+.card-news-page .date-block,
+.card-scinece-page .date-block {
+  font-weight: 700;
+}
+.card-news-page .date-block .publish,
+.card-scinece-page .date-block .publish {
+  padding-right: 10px;
+}
+.card-news-page .science-description,
+.card-scinece-page .science-description {
+  margin-top: 50px;
+}
+.card-news-page .science-description .headline,
+.card-scinece-page .science-description .headline {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.card-news-page .science-description .list,
+.card-scinece-page .science-description .list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.card-news-page .science-description .list .list-item,
+.card-scinece-page .science-description .list .list-item {
+  padding-left: 10px;
+  position: relative;
+}
+.card-news-page .science-description .list .list-item:before,
+.card-scinece-page .science-description .list .list-item:before {
+  content: '';
+  position: absolute;
+  top: -webkit-calc(50% - 1.5px);
+  top: calc(50% - 1.5px);
+  left: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #0070bd;
+}
+.card-news-page .science-description .science-name,
+.card-scinece-page .science-description .science-name {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0070bd;
+}
+.card-news-page .science-description .btn-science,
+.card-scinece-page .science-description .btn-science {
+  position: relative;
+  padding: 15px 65px;
+  font-weight: 300;
+  color: #fff;
+  background-color: #0070bd;
+}
+.card-news-page .science-description .btn-science:before,
+.card-scinece-page .science-description .btn-science:before {
+  content: '';
+  position: absolute;
+  top: -webkit-calc(50% - 12px);
+  top: calc(50% - 12px);
+  left: 30px;
+  width: 22px;
+  height: 22px;
+  background-image: url("../../img/svg/docs.svg");
+  background-size: cover;
+}
+@media (max-width: 991px) {
+  .card-diseases-page #watch-and-reviews .left-section {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .card-diseases-page .h-section {
+    margin-bottom: 20px;
+  }
+  .card-diseases-page #diseases-name .wrap {
+    height: 250px;
+    padding: 30px 0 15px;
+  }
+  .card-diseases-page #diseases-name .buttons .btn {
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+  .card-diseases-page #watch-and-reviews .subtitle {
+    font-size: 20px;
+  }
+  .card-diseases-page #form {
+    padding: 40px 0;
+  }
+  .card-news-page,
+  .card-scinece-page {
+    padding: 15px 0 40px;
+  }
+  .card-news-page .title,
+  .card-scinece-page .title {
+    font-size: 18px;
+  }
+  .card-news-page .science-description,
+  .card-scinece-page .science-description {
+    margin-top: 30px;
+  }
+  .card-news-page .science-description .headline,
+  .card-scinece-page .science-description .headline {
+    margin-bottom: 20px;
+  }
+  .card-news-page .science-description .list,
+  .card-scinece-page .science-description .list {
+    height: auto;
+  }
+  .card-news-page .science-description .list .list-item,
+  .card-scinece-page .science-description .list .list-item {
+    margin-bottom: 10px;
+  }
+  .card-news-page .science-description .science-name,
+  .card-scinece-page .science-description .science-name {
+    font-size: 16px;
+  }
+}

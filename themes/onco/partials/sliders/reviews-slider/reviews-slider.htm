@@ -1,0 +1,16 @@
+<div class="slider-wrap reviews-slider-wrap">
+   <div id="reviews-slider" class="slider">
+       {% for item in reviews %}
+           <div class="slider-item">
+               {% partial 'cards/reviews-card/reviews-card' item=item %}
+           </div>
+       {% endfor %}
+   </div>
+</div>
+<div class="nav-thumbs-wrap">
+   <div id="reviews-thumbs" class="nav-thumbs">
+       {% for item in reviews  %}
+           <button style="display: none;"></button>
+       {% endfor %}
+   </div>
+</div>

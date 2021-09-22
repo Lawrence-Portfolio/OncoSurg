@@ -1,0 +1,18 @@
+<div class="prof-materials-slider-wrap">
+   <div id="prof-materials-slider" class="slider">
+       {% for item in this.theme.prof_materials %}
+            <div class="slider-item">
+               {% partial 'cards/prof-material/prof-material' item=item %}
+            </div>
+       {% endfor %}
+   </div>
+</div>
+<div id="prof-materials-controls" class="prof-materials-nav">
+   <button class="controls-btn" id="prev-btn"><i class="far fa-chevron-left"></i></button>
+   <div id="prof-materials-thumbs">
+       {% for item in this.theme.prof_materials  %}
+           <button style="display: none;">{{ loop.index }}</button>
+       {% endfor %}
+   </div>
+   <button class="controls-btn" id="next-btn"><i class="far fa-chevron-right"></i></button>
+</div>

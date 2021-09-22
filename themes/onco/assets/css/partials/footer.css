@@ -1,0 +1,145 @@
+footer .footer-wrap {
+  padding: 60px 0;
+  background: -webkit-gradient(linear, left top, right top, from(#0077bf), to(#4858c9));
+  background: -o-linear-gradient(left, #0077bf 0%, #4858c9 100%);
+  background: linear-gradient(90deg, #0077bf 0%, #4858c9 100%);
+}
+footer .footer-wrap .footer-section:last-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+footer .footer-wrap .footer-section .footer-title {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #fff;
+}
+footer .footer-wrap .footer-section .footer-content {
+  padding-top: 30px;
+  border-top: 1px solid #fff;
+}
+footer .footer-wrap .footer-section .no-title {
+  margin-top: 31px;
+}
+footer .footer-wrap .footer-section .info .link {
+  display: block;
+  padding: 12px 0;
+  font-size: 18px;
+  color: #fff;
+  border-bottom: 1px solid #4586ca;
+}
+footer .footer-wrap .footer-section .info .link:first-child {
+  padding-top: 0;
+}
+footer .footer-wrap .footer-section .founders-and-partners .partner-img {
+  margin-bottom: 16px;
+}
+footer .footer-wrap .footer-section .site-search .form-inline .form-control {
+  border-radius: 0;
+  border: 1px solid #404cb4;
+  font-weight: 700;
+}
+footer .footer-wrap .footer-section .site-search .form-inline .btn-search {
+  padding: 6px 19px;
+  background-color: #29318e;
+  border-radius: 0;
+  color: #fff;
+}
+footer .footer-wrap .footer-section .sotial-networks-container .footer-title {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #fff;
+}
+footer .footer-wrap .footer-section .sotial-networks-container .sotial-link {
+  display: inline-block;
+  margin-right: 10px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+footer .footer-wrap .footer-section .sotial-networks-container .sotial-link:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+footer .copywriter {
+  padding: 10px 0;
+  color: #fff;
+  background-color: #0b3a6e;
+  font-family: 'PT-Sans';
+}
+footer .copywriter .wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+footer .copywriter .wrap .biz-mark {
+  color: #fff;
+  margin-left: 15px;
+}
+@media (max-width: 1199px) {
+  footer .footer-wrap .footer-section .site-search .form-inline .form-control {
+    width: 154px;
+  }
+}
+@media (max-width: 991px) {
+  footer .footer-wrap {
+    padding: 30px 0;
+  }
+  footer .footer-wrap .footer-section .no-title {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 12px;
+  }
+  footer .footer-wrap .founders-and-partners,
+  footer .footer-wrap .site-search,
+  footer .footer-wrap .sotial-networks-container {
+    margin-top: 30px;
+  }
+  footer .footer-wrap .site-search .form-inline .form-control {
+    width: 230px;
+  }
+  footer .copywriter {
+    padding: 20px 0;
+  }
+  footer .copywriter .copy-text {
+    text-align: center;
+  }
+  footer .copywriter .biz-mark-wrap {
+    margin-top: 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .copywriter .wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}

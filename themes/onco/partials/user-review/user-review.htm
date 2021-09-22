@@ -1,0 +1,23 @@
+{% for review in reviews %}
+<div class="col-12 col-review">
+   <div class="user-comment">
+      <div class="username-wrap">
+         <span class="username">Баранова Екатерина Олеговна</span>
+         <div class="user-rating">
+            <img class="img-fluid star" src="{{'assets/img/svg/star-solid.svg'|theme}}" alt="">
+            <img class="img-fluid star" src="{{'assets/img/svg/star-solid.svg'|theme}}" alt="">
+            <img class="img-fluid star" src="{{'assets/img/svg/star-solid.svg'|theme}}" alt="">
+            <img class="img-fluid star" src="{{'assets/img/svg/star-regular.svg'|theme}}" alt="">
+            <img class="img-fluid star" src="{{'assets/img/svg/star-regular.svg'|theme}}" alt="">
+         </div>
+      </div>
+      <p class="description">
+         Была поражена вниманием, доброжелательностью, профессионализмом. Прекрасно организована работа отделения. Спасибо моему лечащему врачу - Ветшеву Федору Петровичу, а также Александре, курировавшей меня. Ни одна моя малейшая просьба, вопрос и т.п. не были оставлены без внимания. Глубокое впечатление оставило отношение к своему делу Хоробрых Татьяны Витальевны. Низкий поклон.
+      </p>
+      <span class="date-reviews">21.03.2016</span>
+      {% if review.isFeedBack %}
+         {% partial 'user-review/admin-feedback' %}
+      {% endif %}
+   </div>
+</div>
+{% endfor %}

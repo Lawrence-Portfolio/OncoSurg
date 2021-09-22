@@ -1,0 +1,102 @@
+items:
+    -
+        title: 'Об отделе'
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: about-us/about-us
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Заболевания
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: listings/diseases-listing
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Научные работы'
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: listings/science-listing
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Мы в СМИ'
+        type: cms-page
+        code: ''
+        reference: listings/mass-media
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Новости
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: listings/news-listing
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Отзывы
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: reviews/reviews
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Фотогалерея
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: listings/photogallery
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Контакты
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: contacts/contacts
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Главное меню'

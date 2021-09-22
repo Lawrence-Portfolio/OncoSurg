@@ -1,0 +1,17 @@
+{% set posts = blogPosts.posts %}
+<div class="slider-wrap news-slider-wrap">
+   <div id="news-slider" class="slider">
+      {% for post in posts %}
+         <div class="slider-item">
+            {% partial 'cards/news-and-science-card/news-card' post=post %}
+         </div>
+      {% endfor %}
+   </div>
+</div>
+<div class="nav-thumbs-wrap">
+   <div id="news-thumbs" class="nav-thumbs">
+      {% for post in posts %}
+         <button style="display: none;"></button>
+      {% endfor %}
+   </div>
+</div>

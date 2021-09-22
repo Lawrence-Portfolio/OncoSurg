@@ -1,0 +1,3 @@
+{% if input('page') < Gallery.count / 5 %}
+<button class="btn btn-load btn-w-100" data-page="{{ input('page') ? input('page') + 1 : 2 }}">Загрузить ещё</button>
+{% endif %}

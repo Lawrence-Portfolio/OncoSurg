@@ -1,0 +1,40 @@
+<header id="main-header">
+   <div class="header-wrapper">
+      <div class="header-floating">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-2 col-md-7 col-sm-5 logo-section">
+                  <a href="/">
+                     <img class="img-fluid" src="{{'assets/img/logo-new2.png'|theme}}" alt="">
+                  </a>
+               </div>
+               <div class="col-xl-7 col-lg-6 col-md-12 info-section">
+                  <div class="header-content">
+                     <span class="h-headline">Онкологическое отделение хирургических методов лечения</span>
+                     <div class="info-box">
+                        <a href="tel:{{ this.theme.phone }}" class="info phone">{{ this.theme.phone }}</a>
+                        <a href="mailto:{{ this.theme.email }}" class="info mail">{{ this.theme.email }}</a>
+                        <span class="info address">{{ this.theme.address }}</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-5 col-sm-7 btn-section">
+                  <button class="btn btn-modal stethoscope" data-toggle="modal" data-target="#sign-up-apponiment">Записаться на прием</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="navigation">
+      <div class="container">
+         <nav class="navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#show-navbar" aria-controls="show-navbar" aria-expanded="false" aria-label="Toggle navigation">
+               <i class="far fa-bars"></i>
+             </button>
+            <div class="collapse navbar-collapse" id="show-navbar">
+               {% partial 'staticMenu/default' %}
+            </div>
+         </nav>
+      </div>
+   </div>
+</header>

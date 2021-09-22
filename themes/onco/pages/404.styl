@@ -1,0 +1,44 @@
+@import '../build/stylus/utils/color'
+
+.not-found-page
+   padding: 40px 0 60px
+   text-align: center
+   text-transform: uppercase
+   line-height: 1
+   span 
+      display: block
+   .num-error
+      font-size: 300px
+      color: $main-color
+   .error
+      display: inline-block
+      position relative
+      color: $main-color
+      font-size: 110px
+      padding-bottom: 20px
+      margin-bottom: 40px
+      &:before
+         content: ''
+         position: absolute
+         left: 130px
+         bottom: 0
+         right 130px
+         height 4px
+         background-color: $main-color
+   .not-found
+      font-size: 40px
+@media(max-width 767px)
+   .not-found-page
+      padding: 20px 0 30px
+      .num-error
+         font-size: 120px
+      .error
+         font-size: 40px
+         padding-bottom: 15px
+         margin-bottom: 25px
+         &:before
+            left: 35px
+            right 35px
+            height 2px
+      .not-found
+         font-size: 20px

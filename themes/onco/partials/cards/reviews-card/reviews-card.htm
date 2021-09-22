@@ -1,0 +1,11 @@
+<div class="reviews-card">
+   <div>
+       {% if item.avatar %}
+           <img class="tns-lazy" src="{{ item.avatar.path }}" data-src="{{ item.avatar.path }}" alt="Аватар">
+       {% endif %}
+       <p class="description">
+           {{ item.comment }}
+       </p>
+   </div>
+   <span class="name">{{ item.author }}</span>
+</div>

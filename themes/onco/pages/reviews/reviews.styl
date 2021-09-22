@@ -1,0 +1,44 @@
+#reviews
+   padding-bottom: 40px
+   .form-reviews
+      padding: 50px 0
+      margin: 20px 0 80px
+   .form-section
+      position relative
+      z-index 2
+   .radio-rating-wrap
+      display: flex
+      align-items: center
+      margin-bottom: 25px
+   .radio-rating
+      padding-left: 10px
+      display: flex
+      flex-direction: row-reverse;
+   .radio-rating > input
+      display none
+   .radio-rating > label
+      position relative 
+      width 25px
+      height 22px
+      margin: 0
+      cursor pointer
+      &:before
+         content: ''
+         position absolute
+         top: 0
+         left: 0
+         right 0
+         bottom: 0
+         background-image: url(../../img/svg/star-regular.svg)
+         background-size: cover
+   .radio-rating > input:checked ~ label:before,
+   .radio-rating:not(:checked) > label:hover,
+   .radio-rating:not(:checked) > label:hover ~ label:before
+      background-image: url(../../img/svg/star-solid.svg)
+      background-size: cover
+   .users-comments
+      margin-top: 40px
+   .btn-load
+   .pagination
+      margin: 10px 0
+

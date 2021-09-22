@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Desease
+
+# Model Form Field configuration
+form: $/bizmark/oncosurg/models/desease/fields.yaml
+
+# Model Class name
+modelClass: BizMark\OncoSurg\Models\Desease
+
+# Default redirect location
+defaultRedirect: bizmark/oncosurg/deseases
+
+# Create page
+create:
+    title: Create Desease
+    redirect: bizmark/oncosurg/deseases/update/:id
+    redirectClose: bizmark/oncosurg/deseases
+
+# Update page
+update:
+    title: Edit Desease
+    redirect: bizmark/oncosurg/deseases
+    redirectClose: bizmark/oncosurg/deseases
+
+# Preview page
+preview:
+    title: Preview Desease

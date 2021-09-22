@@ -1,0 +1,97 @@
+.offer-card {
+  padding: 7.5px;
+}
+.offer-card .offer-wrap {
+  padding: 20px;
+  background-color: #fff;
+  min-height: 450px;
+  -webkit-box-shadow: 3px 3px 8px 0 rgba(0,0,0,0.1);
+          box-shadow: 3px 3px 8px 0 rgba(0,0,0,0.1);
+}
+.offer-card .offer-wrap .headline-card {
+  position: relative;
+  height: 75px;
+}
+.offer-card .offer-wrap .headline-card .headline {
+  display: block;
+  padding: 20px 0 0 70px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.offer-card .offer-wrap .headline-card img {
+  position: absolute;
+  width: 55px;
+  top: 0;
+  left: 0;
+}
+.offer-card .offer-wrap .content-card {
+  margin-top: 5px;
+}
+.offer-card .offer-wrap .content-card .list {
+  padding-left: 30px;
+  margin: 0;
+  list-style-type: none;
+}
+.offer-card .offer-wrap .content-card .list .list-item {
+  position: relative;
+  padding-left: 35px;
+  line-height: 1.3;
+}
+.offer-card .offer-wrap .content-card .list .list-item:last-child {
+  margin-bottom: 0;
+}
+.offer-card .offer-wrap .content-card .list .list-link {
+  display: block;
+  padding: 5px 0;
+  color: #000;
+  text-decoration: none;
+}
+.offer-card .offer-wrap .content-card .list .list-link:hover {
+  font-weight: 700;
+}
+.offer-card .offer-wrap .content-card .list .list-link:hover:before {
+  border-left-color: #ff0015;
+}
+.offer-card .offer-wrap .content-card .list .list-link:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  border: 5px solid transparent;
+  border-left: 8px solid #000;
+}
+.offer-card .offer-wrap .content-card .pod-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.offer-card .offer-wrap .content-card .pod-list .pod-list-item {
+  padding-left: 10px;
+  position: relative;
+}
+.offer-card .offer-wrap .content-card .pod-list .pod-list-item .pod-list-link {
+  padding: 5px 0;
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+}
+.offer-card .offer-wrap .content-card .pod-list .pod-list-item .pod-list-link:hover {
+  font-weight: 700;
+}
+.offer-card .offer-wrap .content-card .pod-list .pod-list-item .pod-list-link:hover:before {
+  background-color: #ff0015;
+}
+.offer-card .offer-wrap .content-card .pod-list .pod-list-item .pod-list-link:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 4px;
+  height: 1px;
+  background-color: #000;
+}
+@media (max-width: 767px) {
+  .offer-card .offer-wrap {
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+}

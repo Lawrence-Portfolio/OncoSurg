@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Review
+
+# Model Form Field configuration
+form: $/bizmark/oncosurg/models/review/fields.yaml
+
+# Model Class name
+modelClass: BizMark\OncoSurg\Models\Review
+
+# Default redirect location
+defaultRedirect: bizmark/oncosurg/reviews
+
+# Create page
+create:
+    title: Create Review
+    redirect: bizmark/oncosurg/reviews/update/:id
+    redirectClose: bizmark/oncosurg/reviews
+
+# Update page
+update:
+    title: Edit Review
+    redirect: bizmark/oncosurg/reviews
+    redirectClose: bizmark/oncosurg/reviews
+
+# Preview page
+preview:
+    title: Preview Review

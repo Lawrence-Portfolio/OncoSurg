@@ -1,0 +1,110 @@
+title = "Дочернее заболевание"
+url = "/diseases/:parent/:slug"
+layout = "default"
+is_hidden = 0
+
+[ChildDesease]
+slug = "{{ :slug }}"
+parent = "{{ :parent }}"
+
+[emptyForm zapisForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_subject = "Запись на приём или консультацию"
+mail_recipients[] = "onco-surg@mail.ru"
+reset_form = 1
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+{% set parent_desease = ChildDesease.parent %}
+{% set desease = ChildDesease.desease %}
+{% put styles %}
+    <link rel="stylesheet" href="{{ [
+        'assets/css/partials/breadcrumbs.css',
+        'assets/css/libs/tiny-slider.min.css',
+
+        'assets/css/partials/offer-card.css',
+        'assets/css/partials/form.css',
+        'assets/css/partials/sliders.css',
+        'assets/css/partials/reviews-card.css',
+
+        'assets/css/pages/card.css'
+    ]|theme }}">
+{% endput %}
+{% put main_classes %}
+    id="card-page"
+    class="card-diseases-page"
+{% endput %}
+{% set breadcrumbs = [
+    {'title': 'Заболевания', 'url' : 'listings/diseases-listing'|page },
+    {'title': parent_desease.name, 'url' : 'cards/desease-page'|page({slug:parent_desease.slug}) },
+    {'title': desease.name, 'isActive' : true }
+] %}
+
+{% partial 'layout/breadcrumbs/breadcrumbs' breadcrumbs=breadcrumbs %}
+<section id="diseases-name">
+    <div class="container">
+        <div class="wrap">
+            <span class="h-section bold">{{ desease.name }}</span>
+            <div class="buttons">
+                <a href="#form" class="btn">Записаться на прием</a>
+                <button class="btn" data-toggle="modal" data-target="#sign-up-apponiment">Заказать звонок</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="diseases-description">
+    <div class="container">
+        <span class="h-section bold">О заболевании</span>
+        <div class="fr-view">
+            {{ desease.information|raw }}
+        </div>
+    </div>
+</section>
+<section id="watch-and-reviews" class="section-decor-bottom-right">
+    <div class="container">
+        <span class="h-section bold">Клиническое наблюдение</span>
+        <div class="row">
+            <div class="col-lg-7 left-section">
+                <img class="img-fluid" src="{{'assets/img/ahalazia.jpg'|theme}}" alt="Картинка">
+            </div>
+            <div class="col-lg-5 rigth-section">
+                <div class="fr-view">
+                    {{ desease.clinic_watch|raw }}
+                </div>
+            </div>
+        </div>
+        <hr>
+        <span class="h-section bold">Отзывы пациентов</span>
+        {% partial 'sliders/inner-reviews-slider/inner-reviews-slider' reviews=desease.reviews %}
+    </div>
+</section>
+<section id="form">
+    <div class="container">
+        <span class="h-section bold">Записатсья на прием</span>
+        <form class="form-section" data-request="{{ zapisForm }}::onFormSubmit">
+            {{ form_token() }}
+            <p class="headline-form">Не нашли интересующее направление?</p>
+            <p class="subtitle-form">Напишите нам и мы вам поможем или запишем на консультацию у специалиста.</p>
+            <div class="row">
+                {% partial 'layout/form/form' %}
+                <div class="col-lg-6">
+                    <div id="{{ zapisForm }}_forms_flash"></div>
+                    <button class="btn btn-submit btn-w-100" type="submit">Отправить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% put scripts %}
+    <script src="{{ [
+        'assets/js/libs/tiny-slider.min.js',
+        'assets/js/partials/reviews-slider.js'
+    ]|theme }}"></script>
+{% endput %}
